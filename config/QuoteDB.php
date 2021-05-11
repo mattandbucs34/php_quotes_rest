@@ -1,10 +1,10 @@
 <?php
   class Database {
-    private static $host = 'localhost';
-    private static $db_name = 'quotesdb';
-    private static $username = 'root';
-    private static $password = 'YaZ5iaewp@z2GU5';
-    private static $conn;
+    private $host = 'localhost';
+    private $db_name = 'quotesdb';
+    private $username = 'root';
+    private $password = 'YaZ5iaewp@z2GU5';
+    private $conn;
 
     public function connect() {
       $this->conn = null;

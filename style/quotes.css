@@ -1,0 +1,743 @@
+.add-quote-container header,
+.edit-quote-container header,
+.edit-author-container header,
+.edit-category-container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: unset;
+}
+
+main {
+  background-color: rgba(250, 235, 215, 0.2);
+}
+
+header {
+  height: 3.5rem;
+  background-color: #0a0a48;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15rem 20rem auto 16rem;
+      grid-template-columns: 15rem 20rem auto 16rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header h2 {
+  margin-left: 2.5rem;
+  color: white;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+header .success {
+  color: yellowgreen;
+  margin-left: 2.5rem;
+  font-weight: 600;
+}
+
+header .header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main {
+  height: calc(100vh - 6.5rem);
+  position: relative;
+}
+
+footer {
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(10, 10, 72, 0.8);
+  color: white;
+}
+
+header .icon-plus {
+  margin-right: 0.5rem;
+}
+
+.add-quote-btn {
+  width: 7rem;
+  margin-right: 1rem;
+  padding: 0 1rem;
+  border-radius: 4px;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add-quote-btn:hover {
+  background-color: #e5e5ff;
+  color: #0a0a48;
+}
+
+header a.add-quote-btn,
+header a.add-quote-btn:visited {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+.filter-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  right: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 4px;
+}
+
+.filter-btn:hover {
+  background-color: rgba(122, 122, 168, 0.3);
+}
+
+.filter-btn:active,
+.add-quote-btn:active,
+.button-cell:active,
+.form-footer button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.quotes,
+.authors,
+.categories {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow-y: auto;
+  background-color: white;
+  -webkit-box-shadow: inset 0px 3px 10px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 3px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.page-tabs-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 2.5rem;
+  z-index: 2;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-tabs-container a {
+  text-decoration: none;
+  width: 5rem !important;
+  height: 100%;
+  background-color: #0a0a48;
+  color: white !important;
+  padding: 0 .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-tabs-container a:visited {
+  color: white;
+}
+
+.page-tabs-container a:target {
+  background-color: #e5e5ff;
+  color: #0a0a48 !important;
+  -webkit-box-shadow: 3px 0px 5px 1px rgba(255, 255, 255, 0.3), -3px 0px 5px 1px rgba(255, 255, 255, 0.3);
+          box-shadow: 3px 0px 5px 1px rgba(255, 255, 255, 0.3), -3px 0px 5px 1px rgba(255, 255, 255, 0.3);
+  z-index: 3;
+}
+
+.page-tabs-container a:focus {
+  outline: none;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Quotes Table************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.quotes th,
+.authors th,
+.categories th {
+  font-size: 24px;
+}
+
+.quotes td {
+  padding-left: 0.5rem;
+}
+
+.quote-table {
+  border-spacing: .5rem 0.25rem;
+}
+
+.quote-row {
+  height: 2.75rem;
+}
+
+.author-cell {
+  min-width: 6.5rem;
+}
+
+.quote-cell {
+  word-wrap: normal;
+  width: 45rem;
+  min-width: 20rem;
+}
+
+.category-cell {
+  min-width: 6.5rem;
+}
+
+tbody tr:nth-of-type(2n) {
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+.quotes a, .quotes a:visited, .authors a, .authors a:visited, .categories a, .categories a:visited, .page-tabs-container a, .page-tabs-container a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.quotes td.button-cell {
+  padding: 0px;
+}
+
+.button-cell a {
+  width: 3rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25rem;
+}
+
+.button-cell a:hover {
+  color: red;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/********************************************Add Pages********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.authors .add-author-btn,
+.authors .add-category-btn,
+.categories .add-author-btn,
+.categories .add-category-btn {
+  position: absolute;
+  right: 2rem;
+  height: 2.5rem;
+  top: 1rem;
+  background-color: #0a0a48;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.authors .add-author-btn .icon-plus,
+.authors .add-category-btn .icon-plus,
+.categories .add-author-btn .icon-plus,
+.categories .add-category-btn .icon-plus {
+  margin-right: 0.5rem;
+}
+
+.authors .add-author-btn:active,
+.authors .add-category-btn:active,
+.categories .add-author-btn:active,
+.categories .add-category-btn:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.authors .add-author-container,
+.authors .add-category-container,
+.categories .add-author-container,
+.categories .add-category-container {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.authors .add-author-container form,
+.authors .add-category-container form,
+.categories .add-author-container form,
+.categories .add-category-container form {
+  margin: 1rem;
+}
+
+.authors .add-author-container .form-footer,
+.authors .add-category-container .form-footer,
+.categories .add-author-container .form-footer,
+.categories .add-category-container .form-footer {
+  position: relative;
+  margin-top: 1rem;
+  height: 2.5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.authors .add-author-container .form-footer button,
+.authors .add-category-container .form-footer button,
+.categories .add-author-container .form-footer button,
+.categories .add-category-container .form-footer button {
+  position: absolute;
+  right: 0;
+  height: 2rem;
+  width: 6.5rem;
+  background-color: #0a0a48;
+  color: white;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.authors .add-author-container .form-footer button:hover,
+.authors .add-category-container .form-footer button:hover,
+.categories .add-author-container .form-footer button:hover,
+.categories .add-category-container .form-footer button:hover {
+  background-color: #0a0a48;
+}
+
+.authors .add-author-container .form-footer button:active,
+.authors .add-category-container .form-footer button:active,
+.categories .add-author-container .form-footer button:active,
+.categories .add-category-container .form-footer button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.authors .add-author-container .form-footer .icon-plus,
+.authors .add-category-container .form-footer .icon-plus,
+.categories .add-author-container .form-footer .icon-plus,
+.categories .add-category-container .form-footer .icon-plus {
+  margin-right: 0.5rem;
+}
+
+.authors .add-author-container .form-footer .error,
+.authors .add-category-container .form-footer .error,
+.categories .add-author-container .form-footer .error,
+.categories .add-category-container .form-footer .error {
+  color: red;
+  margin-left: 1.5rem;
+  font-weight: 600;
+}
+
+.categories .form-footer button {
+  width: 7.5rem !important;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Filter Container********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.filter-select-container.hidden {
+  display: none;
+}
+
+.filter-select-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 3rem;
+  background: #fefbf7;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.filter-select-container label {
+  margin-right: 0.5rem;
+}
+
+.filter-selection {
+  margin-right: 2.5rem;
+}
+
+.author-select-container,
+.category-select-container {
+  margin-right: 1rem;
+}
+
+.filter-submit {
+  margin-right: 2.5rem;
+  color: white;
+  height: 1.5rem;
+  width: 4rem;
+  border: 1px solid #0a0a48;
+  border-radius: 4px;
+  background-color: rgba(10, 10, 72, 0.8);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.filter-submit:hover {
+  background-color: #0a0a48;
+  border: 1px solid rgba(10, 10, 72, 0.8);
+}
+
+.filter-submit:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.filter-input-container {
+  margin-right: 1.5rem;
+}
+
+.filter-input-container input {
+  width: 2rem;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Add Quote Page**********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.add-quote-container,
+.edit-quote-container,
+.edit-author-container,
+.edit-category-container {
+  width: 45rem;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.add-quote-container header,
+.edit-quote-container header,
+.edit-author-container header,
+.edit-category-container header {
+  background: rgba(10, 10, 72, 0.8);
+  color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.add-quote-container form,
+.edit-quote-container form,
+.edit-author-container form,
+.edit-category-container form {
+  position: relative;
+  margin-top: 3rem;
+  border-radius: 4px;
+  background-color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  height: 30rem;
+}
+
+.add-quote-container .quote,
+.add-quote-container .author-select-container,
+.add-quote-container .category-select-container,
+.edit-quote-container .quote,
+.edit-quote-container .author-select-container,
+.edit-quote-container .category-select-container,
+.edit-author-container .quote,
+.edit-author-container .author-select-container,
+.edit-author-container .category-select-container,
+.edit-category-container .quote,
+.edit-category-container .author-select-container,
+.edit-category-container .category-select-container {
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 6rem 39rem;
+      grid-template-columns: 6rem 39rem;
+}
+
+.add-quote-container .author-select-container,
+.add-quote-container .category-select-container,
+.edit-quote-container .author-select-container,
+.edit-quote-container .category-select-container,
+.edit-author-container .author-select-container,
+.edit-author-container .category-select-container,
+.edit-category-container .author-select-container,
+.edit-category-container .category-select-container {
+  margin-right: unset;
+}
+
+.add-quote-container select,
+.edit-quote-container select,
+.edit-author-container select,
+.edit-category-container select {
+  width: 12rem;
+}
+
+.add-quote-container textarea,
+.edit-quote-container textarea,
+.edit-author-container textarea,
+.edit-category-container textarea {
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.add-quote-container .form-footer,
+.edit-quote-container .form-footer,
+.edit-author-container .form-footer,
+.edit-category-container .form-footer {
+  position: relative;
+  margin-top: 1rem;
+  height: 2.5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add-quote-container .form-footer button,
+.edit-quote-container .form-footer button,
+.edit-author-container .form-footer button,
+.edit-category-container .form-footer button {
+  position: absolute;
+  right: 0;
+  height: 2rem;
+  width: 4.5rem;
+  margin-right: 1.5rem;
+  background-color: rgba(10, 10, 72, 0.8);
+  color: white;
+  border: 1px solid #0a0a48;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.add-quote-container .form-footer button:hover,
+.edit-quote-container .form-footer button:hover,
+.edit-author-container .form-footer button:hover,
+.edit-category-container .form-footer button:hover {
+  background-color: #0a0a48;
+}
+
+.add-quote-container .form-footer button:active,
+.edit-quote-container .form-footer button:active,
+.edit-author-container .form-footer button:active,
+.edit-category-container .form-footer button:active {
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.add-quote-container .form-footer .icon-plus,
+.edit-quote-container .form-footer .icon-plus,
+.edit-author-container .form-footer .icon-plus,
+.edit-category-container .form-footer .icon-plus {
+  margin-right: 0.5rem;
+}
+
+.add-quote-container .form-footer .error,
+.edit-quote-container .form-footer .error,
+.edit-author-container .form-footer .error,
+.edit-category-container .form-footer .error {
+  color: red;
+  margin-left: 1.5rem;
+  font-weight: 600;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Edit Pages**************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.edit-quote-container form,
+.edit-author-container form,
+.edit-category-container form {
+  width: 100%;
+}
+
+.edit-quote-container .edit-form-body,
+.edit-author-container .edit-form-body,
+.edit-category-container .edit-form-body {
+  margin: 1rem;
+}
+
+.edit-quote-container .edit-form-section,
+.edit-author-container .edit-form-section,
+.edit-category-container .edit-form-section {
+  margin-bottom: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 7rem 41rem;
+      grid-template-columns: 7rem 41rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-quote-container .edit-form-section textarea,
+.edit-author-container .edit-form-section textarea,
+.edit-category-container .edit-form-section textarea {
+  width: calc(100% - 7rem);
+}
+
+.edit-quote-container .edit-form-section select,
+.edit-author-container .edit-form-section select,
+.edit-category-container .edit-form-section select {
+  height: 2rem;
+}
+
+.edit-quote-container .edit-form-section input,
+.edit-author-container .edit-form-section input,
+.edit-category-container .edit-form-section input {
+  width: 35rem;
+  height: 2rem;
+}
+
+.edit-quote-container .form-footer button,
+.edit-author-container .form-footer button,
+.edit-category-container .form-footer button {
+  width: 7.5rem;
+}
+
+.edit-quote-container .form-footer button .icon-pencil,
+.edit-author-container .form-footer button .icon-pencil,
+.edit-category-container .form-footer button .icon-pencil {
+  margin-right: 0.5rem;
+}
+
+.edit-author-container .form-footer button {
+  width: 8rem;
+}
+
+.edit-category-container .form-footer button {
+  width: 9rem;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Icons*******************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.icon-filter {
+  color: white;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Media Queries***********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+@media only screen and (max-width: 1024px) {
+  body {
+    max-height: 100vh;
+  }
+  .quote-table {
+    border-spacing: 4px 0.25rem;
+    height: 45rem;
+  }
+  .quote-row {
+    height: 2.75rem;
+    min-height: 1.75rem;
+  }
+  .quote-cell {
+    width: 100%;
+    min-width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .quotes {
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+/*# sourceMappingURL=quotes.css.map */

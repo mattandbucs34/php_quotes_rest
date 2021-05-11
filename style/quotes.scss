@@ -1,0 +1,589 @@
+$dark-blue: #0a0a48;
+$light-blue: rgb(229, 229, 255);
+$footer-blue: rgba(10, 10, 72, 0.80);
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+%center-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: unset;
+}
+
+main {
+  background-color: rgba(250, 235, 215, 0.20);
+}
+
+header {
+  height: 3.5rem;
+  background-color: $dark-blue;
+  display: grid;
+  grid-template-columns: 15rem 20rem auto 16rem;
+  align-items: center;
+
+  h2 {
+    margin-left: 2.5rem;
+    color: white;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .success {
+    color: yellowgreen;
+    margin-left: 2.5rem;
+    font-weight: 600;
+  }
+
+  .header-right {
+    display: flex;
+  }
+}
+
+main {
+  height: calc(100vh - 6.5rem);
+  position: relative;
+}
+
+footer {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $footer-blue;
+  color: white;
+}
+
+header .icon-plus {
+  margin-right: 0.5rem;
+}
+
+.add-quote-btn {
+  width: 7rem;
+  margin-right: 1rem;
+  padding: 0 1rem;
+  border-radius: 4px;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.add-quote-btn:hover {
+  background-color: $light-blue;
+  color: $dark-blue;
+}
+
+header a.add-quote-btn,
+header a.add-quote-btn:visited {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 4px;
+}
+
+.filter-btn:hover {
+  background-color: rgba(122, 122, 168, 0.3);
+}
+
+.filter-btn:active,
+.add-quote-btn:active,
+.button-cell:active,
+.form-footer button:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.quotes,
+.authors,
+.categories {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: inset 0px 3px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.page-tabs-container {
+  display: flex;
+  top: 0;
+  left: 2.5rem;
+  z-index: 2;
+  height: 100%;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    width: 5rem !important;
+    height: 100%;
+    background-color: $dark-blue;
+    color:white !important;
+    padding: 0 .5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:target {
+    background-color: $light-blue;
+    color: $dark-blue !important;
+    box-shadow: 3px 0px 5px 1px rgba(255, 255, 255, 0.3), -3px 0px 5px 1px rgba(255, 255, 255, 0.3);
+    z-index: 3;
+  }
+
+  a:focus {
+    outline: none;
+  }
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Quotes Table************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+
+.quotes th,
+.authors th,
+.categories th {
+  font-size: 24px;
+}
+
+.quotes td {
+  padding-left: 0.5rem;
+}
+
+.quote-table {
+  border-spacing: .5rem 0.25rem;
+}
+
+.quote-row {
+  height: 2.75rem;
+}
+
+.author-cell {
+  min-width: 6.5rem;
+}
+
+.quote-cell {
+  word-wrap: normal;
+  width: 45rem;
+  min-width: 20rem;
+}
+
+.category-cell {
+  min-width: 6.5rem;
+}
+
+tbody tr:nth-of-type(2n) {
+  background-color: rgba(0, 0, 255, 0.10);
+}
+
+.hidden {
+  display: none;
+}
+
+.quotes, .authors, .categories, .page-tabs-container {
+  a, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.quotes td.button-cell {
+  padding: 0px;
+}
+
+.button-cell a {
+  width: 3rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.button-cell a:hover {
+  color: red;
+}
+
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/********************************************Add Pages********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.authors,
+.categories {
+
+  .add-author-btn,
+  .add-category-btn {
+    position: absolute;
+    right: 2rem;
+    height: 2.5rem;
+    top: 1rem;
+    background-color: #0a0a48;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    box-shadow: $shadow;
+
+    .icon-plus {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .add-category-btn {
+
+  }
+
+  .add-author-btn:active,
+  .add-category-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+
+  .add-author-container,
+  .add-category-container {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    box-shadow: $shadow;
+    border-radius: 4px;
+
+    form {
+      margin: 1rem;
+    }
+
+    .form-footer {
+      position: relative;
+      margin-top: 1rem;
+      height: 2.5rem;
+      width: 100%;
+      display: flex;
+      // justify-content: flex-end;
+      align-items: center;
+  
+      button {
+        position: absolute;
+        right: 0;
+        height: 2rem;
+        width: 6.5rem;
+        background-color: $dark-blue;
+        color: white;
+        border-radius: 4px;
+        box-shadow: $shadow;
+        border: none;
+      }
+  
+      button:hover {
+        background-color: $dark-blue;
+      }
+  
+      button:active {
+        transform: translateY(2px);
+        box-shadow: unset;
+      }
+  
+      .icon-plus {
+        margin-right: 0.5rem;
+      }
+  
+      .error {
+        color: red;
+        margin-left: 1.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+}
+
+.categories {
+  .form-footer {
+    button {
+      width: 7.5rem !important;
+    }
+  }
+}
+
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Filter Container********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.filter-select-container.hidden {
+  display: none;
+}
+
+.filter-select-container {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  justify-content: flex-end;
+  height: 3rem;
+  background: rgb(254, 251, 247);
+  align-items: center;
+  box-shadow: $shadow;
+}
+
+.filter-select-container label {
+  margin-right: 0.5rem;
+}
+
+.filter-selection {
+  margin-right: 2.5rem;
+}
+
+.author-select-container,
+.category-select-container {
+  margin-right: 1rem;
+}
+
+.filter-submit {
+  margin-right: 2.5rem;
+  color: white;
+  height: 1.5rem;
+  width: 4rem;
+  border: 1px solid $dark-blue;
+  border-radius: 4px;
+  background-color: $footer-blue;
+  box-shadow: $shadow;
+}
+
+.filter-submit:hover {
+  background-color: $dark-blue;
+  border: 1px solid $footer-blue;
+}
+
+.filter-submit:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.filter-input-container {
+  margin-right: 1.5rem;
+}
+
+.filter-input-container input {
+  width: 2rem;
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Add Quote Page**********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+
+.add-quote-container,
+.edit-quote-container,
+.edit-author-container,
+.edit-category-container {
+  width: 45rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  header {
+    background: $footer-blue;
+    color: white;
+    @extend %center-display;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  form {
+    position: relative;
+    margin-top: 3rem;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: $shadow;
+    height: 30rem;
+  }
+
+  .quote,
+  .author-select-container,
+  .category-select-container {
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: grid;
+    grid-template-columns: 6rem 39rem;
+  }
+
+  .author-select-container,
+  .category-select-container {
+    margin-right: unset;
+  }
+
+  select {
+    width: 12rem;
+  }
+
+  textarea {
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .form-footer {
+    position: relative;
+    margin-top: 1rem;
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    // justify-content: flex-end;
+    align-items: center;
+
+    button {
+      position: absolute;
+      right: 0;
+      height: 2rem;
+      width: 4.5rem;
+      margin-right: 1.5rem;
+      background-color: $footer-blue;
+      color: white;
+      border: 1px solid $dark-blue;
+      border-radius: 4px;
+      box-shadow: $shadow;
+    }
+
+    button:hover {
+      background-color: $dark-blue;
+    }
+
+    button:active {
+      transform: translateY(2px);
+      box-shadow: unset;
+    }
+
+    .icon-plus {
+      margin-right: 0.5rem;
+    }
+
+    .error {
+      color: red;
+      margin-left: 1.5rem;
+      font-weight: 600;
+    }
+  }
+}
+
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Edit Pages**************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+
+.edit-quote-container,
+.edit-author-container,
+.edit-category-container {
+  form {
+    width: 100%;
+  }
+
+  .edit-form-body {
+    margin: 1rem;
+  }
+
+  .edit-form-section {
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 7rem 41rem;
+    align-items: center;
+
+    textarea {
+      width: calc(100% - 7rem);
+    }
+    select {
+      height: 2rem;
+    }
+
+    input {
+      width: 35rem;
+      height: 2rem;
+    }
+  }
+
+  .form-footer button {
+    width: 7.5rem;
+    
+    .icon-pencil {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.edit-author-container {
+  .form-footer button {
+    width: 8rem;
+  }
+}
+
+.edit-category-container {
+  .form-footer button {
+    width: 9rem;
+  }
+}
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Icons*******************************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+.icon-filter {
+  color: white;
+}
+/*************************************************************************************************/
+/*************************************************************************************************/
+/*************************************Media Queries***********************************************/
+/*************************************************************************************************/
+/*************************************************************************************************/
+
+@media only screen and (max-width: 1024px) {
+  body {
+    max-height: 100vh;
+  }
+  .quote-table {
+    border-spacing: 4px 0.25rem;
+    height: 45rem;
+  }
+  .quote-row {
+    height: 2.75rem;
+    min-height: 1.75rem;
+  }
+  .quote-cell {
+    width: 100%;
+    min-width: 20rem;
+  }
+
+}
+
+@media only screen and (max-width: 667px) {
+  .quotes {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
